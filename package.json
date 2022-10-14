@@ -15,11 +15,13 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "gatsby": "^4.24.4",
     "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-manifest": "^4.24.0",
     "gatsby-plugin-sharp": "^4.24.0",
     "gatsby-plugin-sitemap": "^5.24.0",
+    "gatsby-source-airtable": "^2.3.0",
     "gatsby-source-filesystem": "^4.24.0",
     "gatsby-transformer-sharp": "^4.24.0",
     "react": "^18.1.0",
