@@ -30,16 +30,21 @@ module.exports = {
       resolve: "gatsby-source-airtable",
       options: {
         apiKey: process.env.AIRTABLE_API_KEY,
-        concurrency: 5, // default, see using markdown and attachments for more information
+        concurrency: 5,
         tables: [
           {
             baseId: process.env.AIRTABLE_BASE_ID,
             tableName: process.env.AIRTABLE_TABLE_NAME,
             tableLinks: ["Writer"],
+            separateNodeType: true,
+            queryName: "Posts"
           },
           {
             baseId: process.env.AIRTABLE_BASE_ID,
             tableName: "Writers",
+            tableLinks:["Directory"],
+            separateNodeType: true,
+            queryName: "Writers"
           },
         ],
       },
