@@ -35,16 +35,17 @@ module.exports = {
           {
             baseId: process.env.AIRTABLE_BASE_ID,
             tableName: process.env.AIRTABLE_TABLE_NAME,
-            tableLinks: ["Writer"],
+            tableLinks: ["writer"],
+            tableView: "gatsbySource",
             separateNodeType: true,
-            queryName: "Posts"
+            queryName: "Articles",
           },
           {
             baseId: process.env.AIRTABLE_BASE_ID,
-            tableName: "Writers",
-            tableLinks:["Directory"],
+            tableName: "writerDirectory",
+            tableLinks: ["directory"],
             separateNodeType: true,
-            queryName: "Writers"
+            queryName: "Writers",
           },
         ],
       },

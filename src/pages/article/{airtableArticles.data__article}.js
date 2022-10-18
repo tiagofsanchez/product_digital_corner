@@ -2,7 +2,7 @@ import { graphql } from "gatsby";
 import * as React from "react";
 
 // To Do's
-// Bring data in
+// DONE: Bring data in
 // just create the urls for the published
 
 const BlogPost = (props) => {
@@ -12,10 +12,10 @@ const BlogPost = (props) => {
 
 export const query = graphql`
   query ($id: String) {
-    airtablePosts(id: { eq: $id }) {
+    airtableArticles(id: { eq: $id }) {
       id
       data {
-        Article
+        article
       }
     }
   }
