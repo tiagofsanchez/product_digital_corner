@@ -1,13 +1,10 @@
+import { Typography } from "@mui/material";
 import { graphql } from "gatsby";
 import * as React from "react";
 
-// To Do's
-// DONE: Bring data in
-// DONE: just create the urls for the published
-
 const BlogPost = (props) => {
   console.log(props);
-  return <h1>Something here</h1>;
+  return <Typography variant="h1">Something here</Typography>;
 };
 
 export const query = graphql`

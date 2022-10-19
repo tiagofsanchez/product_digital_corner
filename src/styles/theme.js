@@ -21,7 +21,7 @@ const theme = createTheme({
     fontFamily: ["IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif"].join(
       ","
     ),
-    fontSize: 20,
+    fontSize: 25,
   },
 });
 

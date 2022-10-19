@@ -17,9 +17,7 @@ import { Card, CardContent } from "@mui/material";
 const HomePage = (props) => {
   return (
     <Layout>
-      <Typography variant="body1" component="body1">
-        Something here
-      </Typography>
+      <Typography variant="h1">Something here</Typography>
       <Container maxWidth="sm">
         <Box sx={{ my: 4 }}>
           <Typography

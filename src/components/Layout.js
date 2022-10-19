@@ -1,11 +1,13 @@
 import { ThemeProvider } from "@mui/material/styles";
 import * as React from "react";
-import theme from "../theme";
+import Styles from "../styles/styles";
+import theme from "../styles/theme";
 
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <main>{children}</main>
+      <Styles />
+      {children}
     </ThemeProvider>
   );
 };
