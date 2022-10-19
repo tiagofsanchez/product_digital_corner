@@ -3,7 +3,7 @@ import * as React from "react";
 
 // To Do's
 // DONE: Bring data in
-// just create the urls for the published
+// DONE: just create the urls for the published
 
 const BlogPost = (props) => {
   console.log(props);
