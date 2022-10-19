@@ -3,11 +3,10 @@ import * as React from "react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Layout from "../components/Layout";
 import { Card, CardContent } from "@mui/material";
 
 // TODO's:
-// Layout for HomePage that will serve the other pages
+// Done: Layout for HomePage that will serve the other pages
 // DONE: Material Ui: to get the components that I want there
 // UI: Hero
 // UI: ArticleCard
@@ -16,7 +15,7 @@ import { Card, CardContent } from "@mui/material";
 
 const HomePage = (props) => {
   return (
-    <Layout>
+    <>
       <Typography variant="h1">Something here</Typography>
       <Container maxWidth="sm">
         <Box sx={{ my: 4 }}>
@@ -38,7 +37,7 @@ const HomePage = (props) => {
           <pre>{JSON.stringify(props.data, null, 2)}</pre>
         </CardContent>
       </Card>
-    </Layout>
+    </>
   );
 };
 

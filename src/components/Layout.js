@@ -6,6 +6,7 @@ import theme from "../styles/theme";
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
+      <h1>Tiago</h1>
       <Styles />
       {children}
     </ThemeProvider>
