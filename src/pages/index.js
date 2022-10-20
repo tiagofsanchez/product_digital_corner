@@ -37,10 +37,13 @@ export default HomePage;
 
 export const query = graphql`
   query {
-    allAirtableArticles {
+    allAirtableArticles(sort: { order: DESC, fields: data___createdAt }) {
       nodes {
         data {
           article
+          myNotes
+          resourceType
+          resourceAccess
           tag
           createdAt(fromNow: false)
           writer {
