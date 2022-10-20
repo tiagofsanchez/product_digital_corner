@@ -1,10 +1,19 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { graphql } from "gatsby";
 import * as React from "react";
 
-const BlogPost = (props) => {
-  console.log(props);
-  return <Typography variant="h1">Something here</Typography>;
+const articleContainerStyles = {
+  margin: `20px`,
+  maxWidth: `1200px`,
+};
+
+const BlogPost = ({ data }) => {
+  const title = data.airtableArticles.data.article;
+  return (
+    <Box sx={articleContainerStyles}>
+      <Typography variant="h2">{title}</Typography>
+    </Box>
+  );
 };
 
 export const query = graphql`

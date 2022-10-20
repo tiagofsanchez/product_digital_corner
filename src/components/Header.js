@@ -1,6 +1,7 @@
 import * as React from "react";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
+import { Link } from "gatsby";
 
 const containerStyles = {
   margin: `20px`,
@@ -10,7 +11,9 @@ const containerStyles = {
 const Header = () => {
   return (
     <Box sx={containerStyles}>
-      <Typography variant="h6">My Digital Product Directory</Typography>
+      <Link to="/" style={{ textDecoration: `none` }}>
+        <Typography variant="h6">My Digital Product Directory</Typography>
+      </Link>
     </Box>
   );
 };

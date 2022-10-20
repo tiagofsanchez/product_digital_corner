@@ -13,8 +13,9 @@ import Box from "@mui/material/Box";
 // DONE: UI: Footer
 
 // MORE TODO's
-// Query the info that I will want to have in the ArticleCard
+// DONE: Query the info that I will want to have in the ArticleCard
 // HomePage to only show a couple of listings
+// HomePage: when Airtable changes, it triggers the push of the project
 // AllArticles Page
 
 const articleContainerStyles = {
