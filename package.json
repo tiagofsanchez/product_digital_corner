@@ -18,6 +18,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.10",
+    "@sindresorhus/slugify": "^2.1.1",
     "dotenv": "^16.0.3",
     "gatsby": "^4.24.4",
     "gatsby-plugin-image": "^2.24.0",

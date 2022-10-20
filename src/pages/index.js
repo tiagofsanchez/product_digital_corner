@@ -12,6 +12,7 @@ import Box from "@mui/material/Box";
 // DONE: UI: ArticleList
 // DONE: UI: Footer
 
+// MORE TODO's
 // Query the info that I will want to have in the ArticleCard
 // HomePage to only show a couple of listings
 // AllArticles Page

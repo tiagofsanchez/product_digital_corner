@@ -1,15 +1,23 @@
 import { Card, CardContent, Typography } from "@mui/material";
+import { Link } from "gatsby";
+import slugify from "@sindresorhus/slugify";
 import * as React from "react";
+
+// TODO:
+// Link to Article Page
+// FormatLink
 
 const ArticleCard = ({ article }) => {
   const title = article.article;
 
   return (
-    <Card variant="outlined">
-      <CardContent>
-        <Typography variant="body1">{title}</Typography>
-      </CardContent>
-    </Card>
+    <Link to={`/article/${slugify(title)}`}>
+      <Card variant="outlined">
+        <CardContent>
+          <Typography variant="body1">{title}</Typography>
+        </CardContent>
+      </Card>
+    </Link>
   );
 };
 
