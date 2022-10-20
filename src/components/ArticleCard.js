@@ -2,10 +2,12 @@ import { Card, CardContent, Typography } from "@mui/material";
 import * as React from "react";
 
 const ArticleCard = ({ article }) => {
+  const title = article.article;
+
   return (
-    <Card>
+    <Card variant="outlined">
       <CardContent>
-        <Typography variant="body1">{article.article}</Typography>
+        <Typography variant="body1">{title}</Typography>
       </CardContent>
     </Card>
   );

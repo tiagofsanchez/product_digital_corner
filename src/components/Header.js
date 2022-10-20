@@ -10,7 +10,7 @@ const containerStyles = {
 const Header = () => {
   return (
     <Box sx={containerStyles}>
-      <Typography variant="h6">Digital Product Directory</Typography>
+      <Typography variant="h6">My Digital Product Directory</Typography>
     </Box>
   );
 };

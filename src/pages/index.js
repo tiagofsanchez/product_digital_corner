@@ -2,6 +2,7 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import Typography from "@mui/material/Typography";
 import ArticlesList from "../components/ArticlesList";
+import Box from "@mui/material/Box";
 
 // TODO's:
 // DONE: Layout for HomePage that will serve the other pages
@@ -11,12 +12,22 @@ import ArticlesList from "../components/ArticlesList";
 // DONE: UI: ArticleList
 // DONE: UI: Footer
 
+// Query the info that I will want to have in the ArticleCard
+// HomePage to only show a couple of listings
+// AllArticles Page
+
+const articleContainerStyles = {
+  margin: `20px`,
+  maxWidth: `1200px`,
+};
+
 const HomePage = (props) => {
   const allArticles = props.data.allAirtableArticles.nodes;
   return (
     <>
-      <Typography variant="h1">Something here</Typography>
-      <ArticlesList allArticles={allArticles} />
+      <Box sx={articleContainerStyles}>
+        <ArticlesList allArticles={allArticles} />
+      </Box>
     </>
   );
 };
@@ -29,6 +40,13 @@ export const query = graphql`
       nodes {
         data {
           article
+          tag
+          createdAt(fromNow: false)
+          writer {
+            data {
+              name
+            }
+          }
         }
       }
     }
