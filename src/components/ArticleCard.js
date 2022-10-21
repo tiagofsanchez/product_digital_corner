@@ -29,7 +29,7 @@ const ArticleCard = ({ article }) => {
         <CardActionArea>
           <CardContent>
             <Typography
-              variant="caption"
+              variant="overline"
               gutterBottom
               sx={{ fontWeight: 900 }}
               color="text.secondary"

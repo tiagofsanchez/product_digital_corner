@@ -1,13 +1,15 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Fab, Typography } from "@mui/material";
 import { graphql } from "gatsby";
 import * as React from "react";
 import MuiMarkdown from "mui-markdown";
 import ArticleCardWriters from "../../components/ArticleCardWriters";
 import LinkIcon from "@mui/icons-material/Link";
+import moment from "moment";
 
 // TODOS:
 // DONE: Writer name and article type
-// Link to the original article
+// DONE Link to the original article
+// DONE: Lik UI
 // SEO of this page
 // OG for this page
 // Nice Image on the OG of this page that will
@@ -20,7 +22,7 @@ const articleContainerStyles = {
 };
 
 const myNotesStyles = {
-  borderRadius: `10px`,
+  borderRadius: `3px`,
   p: 3,
 };
 
@@ -31,13 +33,23 @@ const BlogPost = ({ data }) => {
   const resourceType = data.airtableArticles.data.resourceType;
   const resourceAccess = data.airtableArticles.data.resourceAccess;
   const url = data.airtableArticles.data.url;
+  const date = data.airtableArticles.data.createdAt;
 
   return (
     <Box sx={articleContainerStyles}>
       <Box>
-        <Typography variant="h1" sx={{ marginBottom: `5px` }}>
+        <Typography
+          variant="overline"
+          gutterBottom
+          sx={{ fontSize: 20 }}
+          color="text.secondary"
+        >
+          {moment(date).format("MMM Do YYYY")}
+        </Typography>
+        <Typography variant="h1" sx={{ marginBottom: `5px` }} gutterBottom>
           {title}
         </Typography>
+
         <Box
           sx={{
             display: `flex`,
@@ -50,13 +62,20 @@ const BlogPost = ({ data }) => {
             resourceAccess={resourceAccess}
             resourceType={resourceType}
           />
-          <a href={url} target="_blank">
+
+          <Fab
+            size="small"
+            aria-label="Link"
+            href={url}
+            target="_blank"
+            color="info"
+          >
             <LinkIcon />
-          </a>
+          </Fab>
         </Box>
       </Box>
       {myNotes && (
-        <Box sx={myNotesStyles} bgcolor="grey.200">
+        <Box sx={myNotesStyles} bgcolor="grey.100">
           <MuiMarkdown>{myNotes}</MuiMarkdown>
         </Box>
       )}
