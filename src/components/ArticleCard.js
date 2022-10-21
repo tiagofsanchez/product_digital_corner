@@ -40,7 +40,14 @@ const ArticleCard = ({ article }) => {
             <Typography variant="h5" component="div" gutterBottom>
               {title}
             </Typography>
-            <Box sx={{ display: `flex`, marginBott: 1, gridGap: `10px` }}>
+            <Box
+              sx={{
+                display: `flex`,
+                marginBott: 1,
+                gridGap: `5px`,
+                alignItems: `center`,
+              }}
+            >
               <Chip label={resourceType} />
               <Chip label={resourceAccess} variant="outlined" />
               <Typography>by</Typography>

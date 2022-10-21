@@ -15,7 +15,7 @@ const BlogPost = ({ data }) => {
   console.log(myNotes);
   return (
     <Box sx={articleContainerStyles}>
-      <Typography variant="h2">{title}</Typography>
+      <Typography variant="h1" >{title}</Typography>
       {myNotes && <MuiMarkdown>{myNotes}</MuiMarkdown>}
     </Box>
   );
