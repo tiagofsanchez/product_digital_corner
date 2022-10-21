@@ -1,22 +1,53 @@
 import { Box, Typography } from "@mui/material";
 import { graphql } from "gatsby";
 import * as React from "react";
-
 import MuiMarkdown from "mui-markdown";
+import ArticleCardWriters from "../../components/ArticleCardWriters";
+
+// TODOS:
+// DONE: Writer name and article type
+// Link to the original article
+// SEO of this page
+// OG for this page
+// Nice Image on the OG of this page that will
 
 const articleContainerStyles = {
   margin: `20px`,
   maxWidth: `1200px`,
+  display: `grid`,
+  gridGap: `25px`,
+};
+
+const myNotesStyles = {
+  backgroundColor: `pink`,
+  borderRadius: `10px`,
+  p: 3,
 };
 
 const BlogPost = ({ data }) => {
   const title = data.airtableArticles.data.article;
   const myNotes = data.airtableArticles.data.myNotes;
-  console.log(myNotes);
+  const writerArray = data.airtableArticles.data.writer;
+  const resourceType = data.airtableArticles.data.resourceType;
+  const resourceAccess = data.airtableArticles.data.resourceAccess;
+
   return (
     <Box sx={articleContainerStyles}>
-      <Typography variant="h1" >{title}</Typography>
-      {myNotes && <MuiMarkdown>{myNotes}</MuiMarkdown>}
+      <Box>
+        <Typography variant="h1" sx={{ marginBottom: `5px` }}>
+          {title}
+        </Typography>
+        <ArticleCardWriters
+          writerArray={writerArray}
+          resourceAccess={resourceAccess}
+          resourceType={resourceType}
+        />
+      </Box>
+      {myNotes && (
+        <Box sx={myNotesStyles}>
+          <MuiMarkdown>{myNotes}</MuiMarkdown>
+        </Box>
+      )}
     </Box>
   );
 };
@@ -28,6 +59,15 @@ export const query = graphql`
       data {
         article
         myNotes
+        resourceType
+        resourceAccess
+        url
+        createdAt(fromNow: false)
+        writer {
+          data {
+            name
+          }
+        }
       }
     }
   }

@@ -1,8 +1,6 @@
 import { red } from "@mui/material/colors";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
-// TODO's:
-
 const theme = createTheme({
   palette: {
     primary: {

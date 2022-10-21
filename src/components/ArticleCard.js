@@ -1,5 +1,4 @@
 import {
-  Chip,
   Card,
   CardActionArea,
   CardContent,
@@ -10,6 +9,7 @@ import { Link } from "gatsby";
 import slugify from "@sindresorhus/slugify";
 import * as React from "react";
 import moment from "moment";
+import ArticleCardWriters from "./ArticleCardWriters";
 
 // TODO:
 // Link to Article Page
@@ -22,7 +22,6 @@ const ArticleCard = ({ article }) => {
   const writerArray = article.writer;
   const resourceType = article.resourceType;
   const resourceAccess = article.resourceAccess;
-  const myNotes = article.myNotes;
 
   return (
     <Link to={`/article/${slugify(title)}`} style={{ textDecoration: "none" }}>
@@ -40,21 +39,11 @@ const ArticleCard = ({ article }) => {
             <Typography variant="h5" component="div" gutterBottom>
               {title}
             </Typography>
-            <Box
-              sx={{
-                display: `flex`,
-                marginBott: 1,
-                gridGap: `5px`,
-                alignItems: `center`,
-              }}
-            >
-              <Chip label={resourceType} />
-              <Chip label={resourceAccess} variant="outlined" />
-              <Typography>by</Typography>
-              {writerArray.map((writer, index) => (
-                <Typography key={index}>{writer.data.name}</Typography>
-              ))}
-            </Box>
+            <ArticleCardWriters
+              writerArray={writerArray}
+              resourceAccess={resourceAccess}
+              resourceType={resourceType}
+            />
           </CardContent>
         </CardActionArea>
       </Card>
