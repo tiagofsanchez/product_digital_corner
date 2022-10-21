@@ -11,8 +11,8 @@ const articlesListContainer = {
 const ArticlesList = ({ allArticles }) => {
   return (
     <Box sx={articlesListContainer}>
-      {allArticles.map((article) => {
-        return <ArticleCard article={article.data} />;
+      {allArticles.map((article, index) => {
+        return <ArticleCard key={index} article={article.data} />;
       })}
     </Box>
   );

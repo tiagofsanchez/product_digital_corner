@@ -44,8 +44,8 @@ const ArticleCard = ({ article }) => {
               <Chip label={resourceType} />
               <Chip label={resourceAccess} variant="outlined" />
               <Typography>by</Typography>
-              {writerArray.map((writer) => (
-                <Typography>{writer.data.name}</Typography>
+              {writerArray.map((writer, index) => (
+                <Typography key={index}>{writer.data.name}</Typography>
               ))}
             </Box>
           </CardContent>
