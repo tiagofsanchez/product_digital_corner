@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import MuiMarkdown from "mui-markdown";
 import ArticleCardWriters from "../../components/ArticleCardWriters";
+import LinkIcon from "@mui/icons-material/Link";
 
 // TODOS:
 // DONE: Writer name and article type
@@ -19,7 +20,6 @@ const articleContainerStyles = {
 };
 
 const myNotesStyles = {
-  backgroundColor: `pink`,
   borderRadius: `10px`,
   p: 3,
 };
@@ -30,6 +30,7 @@ const BlogPost = ({ data }) => {
   const writerArray = data.airtableArticles.data.writer;
   const resourceType = data.airtableArticles.data.resourceType;
   const resourceAccess = data.airtableArticles.data.resourceAccess;
+  const url = data.airtableArticles.data.url;
 
   return (
     <Box sx={articleContainerStyles}>
@@ -37,14 +38,25 @@ const BlogPost = ({ data }) => {
         <Typography variant="h1" sx={{ marginBottom: `5px` }}>
           {title}
         </Typography>
-        <ArticleCardWriters
-          writerArray={writerArray}
-          resourceAccess={resourceAccess}
-          resourceType={resourceType}
-        />
+        <Box
+          sx={{
+            display: `flex`,
+            justifyContent: `space-between`,
+            alignItems: `center`,
+          }}
+        >
+          <ArticleCardWriters
+            writerArray={writerArray}
+            resourceAccess={resourceAccess}
+            resourceType={resourceType}
+          />
+          <a href={url} target="_blank">
+            <LinkIcon />
+          </a>
+        </Box>
       </Box>
       {myNotes && (
-        <Box sx={myNotesStyles}>
+        <Box sx={myNotesStyles} bgcolor="grey.200">
           <MuiMarkdown>{myNotes}</MuiMarkdown>
         </Box>
       )}
