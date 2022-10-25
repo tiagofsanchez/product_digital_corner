@@ -13,6 +13,7 @@ import moment from "moment";
 // SEO of this page
 // OG for this page
 // Nice Image on the OG of this page that will
+// If Video, display Video
 
 const articleContainerStyles = {
   margin: `20px`,
