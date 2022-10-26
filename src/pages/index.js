@@ -1,8 +1,8 @@
-import { graphql } from "gatsby";
 import * as React from "react";
-import Typography from "@mui/material/Typography";
+import { graphql } from "gatsby";
 import ArticlesList from "../components/ArticlesList";
 import Box from "@mui/material/Box";
+import SEO from "../components/SEO";
 
 // TODO's:
 // DONE: Layout for HomePage that will serve the other pages
@@ -20,7 +20,7 @@ import Box from "@mui/material/Box";
 
 const articleContainerStyles = {
   margin: `20px`,
-  maxWidth: `1200px`,
+  maxWidth: `900px`,
 };
 
 const HomePage = (props) => {
@@ -58,4 +58,4 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <title>Home Page</title>;
+export const Head = () => <SEO />;

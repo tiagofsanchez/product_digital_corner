@@ -1,4 +1,4 @@
-import { Box, Fab, Typography } from "@mui/material";
+import { Box, Divider, Fab, Typography } from "@mui/material";
 import { graphql } from "gatsby";
 import * as React from "react";
 import MuiMarkdown from "mui-markdown";
@@ -17,15 +17,19 @@ import moment from "moment";
 
 const articleContainerStyles = {
   margin: `20px`,
-  maxWidth: `1200px`,
+  maxWidth: `900px`,
   display: `grid`,
   gridGap: `25px`,
 };
 
-const myNotesStyles = {
-  borderRadius: `3px`,
-  p: 3,
+const titleStyles = {
+  textTransform: `uppercase`,
+  fontSize: `60px`,
+  fontWeight: 300,
+  marginBottom: `5px`,
 };
+
+const myNotesStyles = {};
 
 const BlogPost = ({ data }) => {
   const title = data.airtableArticles.data.article;
@@ -47,10 +51,9 @@ const BlogPost = ({ data }) => {
         >
           {moment(date).format("MMM Do YYYY")}
         </Typography>
-        <Typography variant="h1" sx={{ marginBottom: `5px` }} gutterBottom>
+        <Typography variant="h1" sx={titleStyles}>
           {title}
         </Typography>
-
         <Box
           sx={{
             display: `flex`,
@@ -63,20 +66,20 @@ const BlogPost = ({ data }) => {
             resourceAccess={resourceAccess}
             resourceType={resourceType}
           />
-
           <Fab
             size="small"
             aria-label="Link"
             href={url}
             target="_blank"
-            color="info"
+            color="default"
           >
             <LinkIcon />
           </Fab>
         </Box>
       </Box>
+      <Divider variant="fullWidth" />
       {myNotes && (
-        <Box sx={myNotesStyles} bgcolor="grey.100">
+        <Box sx={myNotesStyles}>
           <MuiMarkdown>{myNotes}</MuiMarkdown>
         </Box>
       )}

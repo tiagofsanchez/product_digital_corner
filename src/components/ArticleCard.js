@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Card, CardActionArea, CardContent, Typography } from "@mui/material";
 import { Link } from "gatsby";
 import slugify from "@sindresorhus/slugify";
 import * as React from "react";
