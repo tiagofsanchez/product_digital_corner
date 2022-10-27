@@ -14,6 +14,8 @@ import moment from "moment";
 // OG for this page
 // Nice Image on the OG of this page that will
 // If Video, display Video
+// More Articles on the page to keep the user engaged
+// Comments so that people can comment on the article on POV
 
 const articleContainerStyles = {
   margin: `20px`,
@@ -24,8 +26,8 @@ const articleContainerStyles = {
 
 const titleStyles = {
   textTransform: `uppercase`,
-  fontSize: `60px`,
-  fontWeight: 300,
+  fontSize: `50px`,
+  fontWeight: 400,
   marginBottom: `5px`,
 };
 
@@ -46,7 +48,7 @@ const BlogPost = ({ data }) => {
         <Typography
           variant="overline"
           gutterBottom
-          sx={{ fontSize: 20 }}
+          sx={{ fontSize: 20, fontWeight: 500 }}
           color="text.secondary"
         >
           {moment(date).format("MMM Do YYYY")}

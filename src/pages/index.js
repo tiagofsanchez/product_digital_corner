@@ -3,6 +3,8 @@ import { graphql } from "gatsby";
 import ArticlesList from "../components/ArticlesList";
 import Box from "@mui/material/Box";
 import SEO from "../components/SEO";
+import { Button } from "@mui/material";
+import { Link } from "gatsby";
 
 // TODO's:
 // DONE: Layout for HomePage that will serve the other pages
@@ -14,9 +16,9 @@ import SEO from "../components/SEO";
 
 // MORE TODO's
 // DONE: Query the info that I will want to have in the ArticleCard
-// HomePage to only show a couple of listings
+// DONE: HomePage to only show a couple of listings
 // HomePage: when Airtable changes, it triggers the push of the project
-// AllArticles Page
+// DONE: AllArticles Page
 
 const articleContainerStyles = {
   margin: `20px`,
@@ -29,6 +31,11 @@ const HomePage = (props) => {
     <>
       <Box sx={articleContainerStyles}>
         <ArticlesList allArticles={allArticles} />
+      </Box>
+      <Box sx={articleContainerStyles}>
+        <Link to="/articles" style={{ textDecoration: "none" }}>
+          <Button variant="text">More Articles</Button>
+        </Link>
       </Box>
     </>
   );
