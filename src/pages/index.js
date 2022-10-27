@@ -38,7 +38,10 @@ export default HomePage;
 
 export const query = graphql`
   query {
-    allAirtableArticles(sort: { order: DESC, fields: data___createdAt }) {
+    allAirtableArticles(
+      sort: { order: DESC, fields: data___createdAt }
+      limit: 6
+    ) {
       nodes {
         data {
           article
