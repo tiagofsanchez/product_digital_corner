@@ -18,8 +18,8 @@ const ArticleCard = ({ article }) => {
   const resourceAccess = article.resourceAccess;
 
   return (
-    <Link to={`${slugify(title)}`} style={{ textDecoration: "none" }}>
-      <Card variant="outlined">
+    <Link to={`/articles/${slugify(title)}`} style={{ textDecoration: "none" }}>
+      <Card variant="outlined" sx={{borderColor: `rgba(210, 54, 105, .5)` }}>
         <CardActionArea>
           <CardContent>
             <Typography

@@ -34,7 +34,12 @@ const HomePage = (props) => {
       </Box>
       <Box sx={articleContainerStyles}>
         <Link to="/articles" style={{ textDecoration: "none" }}>
-          <Button variant="text">More Articles</Button>
+          <Button
+            variant="text"
+            sx={{ color: `#d23669`, fontWeight: 900, fontSize: 16 }}
+          >
+            📜 More Articles ...
+          </Button>
         </Link>
       </Box>
     </>

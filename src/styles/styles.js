@@ -11,7 +11,7 @@ const styles = {
     li: {
       fontWeight: 400,
       lineHeight: 1.5,
-      fontSize: "1.071rem",
+      fontSize: "0.9285714285714286rem",
     },
   },
 };

@@ -11,8 +11,22 @@ const containerStyles = {
 const Header = () => {
   return (
     <Box sx={containerStyles}>
-      <Link to="/" style={{ textDecoration: `none` }}>
-        <Typography variant="h6">My Digital Product Directory</Typography>
+      <Link
+        to="/"
+        style={{
+          textDecoration: `none`,
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{
+            color: `#d23669`,
+            fontWeight: 900,
+            textTransform: `uppercase`,
+          }}
+        >
+          Digital Product Directory
+        </Typography>
       </Link>
     </Box>
   );

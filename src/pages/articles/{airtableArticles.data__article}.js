@@ -2,7 +2,7 @@ import { Box, Divider, Fab, Typography } from "@mui/material";
 import { graphql } from "gatsby";
 import * as React from "react";
 import MuiMarkdown from "mui-markdown";
-import ArticleCardWriters from "../components/ArticleCardWriters";
+import ArticleCardWriters from "../../components/ArticleCardWriters";
 import LinkIcon from "@mui/icons-material/Link";
 import moment from "moment";
 
@@ -79,7 +79,7 @@ const BlogPost = ({ data }) => {
           </Fab>
         </Box>
       </Box>
-      <Divider variant="fullWidth" />
+      <Divider variant="fullWidth" sx={{borderColor: `#d23669`}} />
       {myNotes && (
         <Box sx={myNotesStyles}>
           <MuiMarkdown>{myNotes}</MuiMarkdown>
