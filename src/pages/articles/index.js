@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import Box from "@mui/system/Box";
 import ArticlesList from "../../components/ArticlesList";
+import SEO from "../../components/SEO";
 
 const articleContainerStyles = {
   margin: `20px`,
@@ -42,3 +43,8 @@ export const query = graphql`
 `;
 
 export default ArticlesPage;
+
+export const Head = ({ location, data, params, pageContext }) => {
+  console.log(location, data, params, pageContext);
+  return <SEO />;
+};

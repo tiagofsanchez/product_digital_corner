@@ -6,7 +6,6 @@ import SEO from "../components/SEO";
 import Button from "@mui/material/Button";
 import { Link } from "gatsby";
 import Hero from "../components/Hero";
-import { Grid } from "@mui/material";
 
 // TODO's:
 // DONE: Layout for HomePage that will serve the other pages
@@ -31,18 +30,23 @@ const HomePage = (props) => {
   const allArticles = props.data.allAirtableArticles.nodes;
   return (
     <>
-      <Box sx={{display: `grid`, gridGap: `20px`}}>
-      <Hero />
-      <Box sx={articleContainerStyles}>
-        <ArticlesList allArticles={allArticles} />
-        <Link to="/articles" style={{ textDecoration: "none" }}>
-          <Button
-            variant="text"
-            sx={{ color: `#d23669`, fontWeight: 900, fontSize: 16, marginTop: `15px` }}
-          >
-            📜 More Articles ...
-          </Button>
-        </Link>
+      <Box sx={{ display: `grid`, gridGap: `20px` }}>
+        <Hero />
+        <Box sx={articleContainerStyles}>
+          <ArticlesList allArticles={allArticles} />
+          <Link to="/articles" style={{ textDecoration: "none" }}>
+            <Button
+              variant="text"
+              sx={{
+                color: `#d23669`,
+                fontWeight: 900,
+                fontSize: 16,
+                marginTop: `15px`,
+              }}
+            >
+              📜 More Articles ...
+            </Button>
+          </Link>
         </Box>
       </Box>
     </>
@@ -76,4 +80,7 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <SEO />;
+export const Head = ({ location, data }) => {
+  console.log(location, data);
+  return <SEO />;
+};

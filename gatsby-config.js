@@ -4,8 +4,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `tfs_product_digital_corner`,
+    title: `Digital Product Directory`,
     siteUrl: `https://www.yourdomain.tld`,
+    image: ``,
+    description: `The best articles and sources of information about product management, together with some of my personal notes.`,
   },
   plugins: [
     "gatsby-plugin-image",

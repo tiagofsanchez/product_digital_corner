@@ -5,6 +5,7 @@ import MuiMarkdown from "mui-markdown";
 import ArticleCardWriters from "../../components/ArticleCardWriters";
 import LinkIcon from "@mui/icons-material/Link";
 import moment from "moment";
+import SEO from "../../components/SEO";
 
 // TODOS:
 // DONE: Writer name and article type
@@ -79,7 +80,7 @@ const BlogPost = ({ data }) => {
           </Fab>
         </Box>
       </Box>
-      <Divider variant="fullWidth" sx={{borderColor: `#d23669`}} />
+      <Divider variant="fullWidth" sx={{ borderColor: `#d23669` }} />
       {myNotes && (
         <Box sx={myNotesStyles}>
           <MuiMarkdown>{myNotes}</MuiMarkdown>
@@ -111,3 +112,8 @@ export const query = graphql`
 `;
 
 export default BlogPost;
+
+export const Head = ({ location, data, params, pageContext }) => {
+  console.log(location, data, params, pageContext);
+  return <SEO />;
+};
