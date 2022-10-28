@@ -4,6 +4,9 @@ import * as React from "react";
 // variable to be passed to the styles prop to make the overall style of the app
 
 const styles = {
+  body: {
+    backgroundColor: `#f7f3e8`,
+  },
   ul: {
     fontFamily: ["IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif"].join(
       ","

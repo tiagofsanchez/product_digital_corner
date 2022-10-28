@@ -19,7 +19,13 @@ const ArticleCard = ({ article }) => {
 
   return (
     <Link to={`/articles/${slugify(title)}`} style={{ textDecoration: "none" }}>
-      <Card variant="outlined" sx={{borderColor: `rgba(210, 54, 105, .5)` }}>
+      <Card
+        variant="outlined"
+        sx={{
+          borderColor: `rgba(210, 54, 105, .5)`,
+          backgroundColor: `#f7f3e8`,
+        }}
+      >
         <CardActionArea>
           <CardContent>
             <Typography

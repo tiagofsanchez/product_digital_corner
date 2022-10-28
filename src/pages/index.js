@@ -3,8 +3,10 @@ import { graphql } from "gatsby";
 import ArticlesList from "../components/ArticlesList";
 import Box from "@mui/material/Box";
 import SEO from "../components/SEO";
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import { Link } from "gatsby";
+import Hero from "../components/Hero";
+import { Grid } from "@mui/material";
 
 // TODO's:
 // DONE: Layout for HomePage that will serve the other pages
@@ -29,18 +31,19 @@ const HomePage = (props) => {
   const allArticles = props.data.allAirtableArticles.nodes;
   return (
     <>
+      <Box sx={{display: `grid`, gridGap: `20px`}}>
+      <Hero />
       <Box sx={articleContainerStyles}>
         <ArticlesList allArticles={allArticles} />
-      </Box>
-      <Box sx={articleContainerStyles}>
         <Link to="/articles" style={{ textDecoration: "none" }}>
           <Button
             variant="text"
-            sx={{ color: `#d23669`, fontWeight: 900, fontSize: 16 }}
+            sx={{ color: `#d23669`, fontWeight: 900, fontSize: 16, marginTop: `15px` }}
           >
             📜 More Articles ...
           </Button>
         </Link>
+        </Box>
       </Box>
     </>
   );
