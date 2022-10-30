@@ -5,7 +5,7 @@ import * as React from "react";
 
 const styles = {
   body: {
-    backgroundColor: `#f7f3e8`,
+    backgroundColor: `#FFDF87`,
   },
   ul: {
     fontFamily: ["IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif"].join(

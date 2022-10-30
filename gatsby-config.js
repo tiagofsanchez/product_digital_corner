@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Digital Product Directory`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Product Corner`,
+    siteUrl: `https://www.productcorner.io`,
     image: ``,
     description: `The best articles and sources of information about product management, together with some of my personal notes.`,
   },

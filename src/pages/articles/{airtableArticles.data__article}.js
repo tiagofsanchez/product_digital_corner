@@ -32,7 +32,11 @@ const titleStyles = {
   marginBottom: `5px`,
 };
 
-const myNotesStyles = {};
+const myNotesStyles = {
+  borderRadius: `8px`,
+  backgroundColor: `#FFF1C9`,
+  padding: `20px`,
+};
 
 const BlogPost = ({ data }) => {
   const title = data.airtableArticles.data.article;
@@ -80,7 +84,7 @@ const BlogPost = ({ data }) => {
           </Fab>
         </Box>
       </Box>
-      <Divider variant="fullWidth" sx={{ borderColor: `#d23669` }} />
+      <Divider variant="fullWidth" />
       {myNotes && (
         <Box sx={myNotesStyles}>
           <MuiMarkdown>{myNotes}</MuiMarkdown>
