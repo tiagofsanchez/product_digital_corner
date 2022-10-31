@@ -23,6 +23,7 @@ const ArticleCard = ({ article }) => {
         variant="outlined"
         sx={{
           backgroundColor: `#FFF1C9`,
+          borderRadius: `10px`
         }}
       >
         <CardActionArea>

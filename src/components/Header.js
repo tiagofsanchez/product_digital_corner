@@ -25,7 +25,7 @@ const Header = () => {
             textTransform: `uppercase`,
           }}
         >
-          Digital Product Directory
+          My Product Corner
         </Typography>
       </Link>
     </Box>
