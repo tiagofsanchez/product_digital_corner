@@ -19,6 +19,11 @@ import generateSocialImage from "../../../functions/generateSocialmage";
 // More Articles on the page to keep the user engaged
 // Comments so that people can comment on the article on POV
 
+// OG: logo to be X
+// OG: Template to be squared instead with border
+// OG: add writers
+// OG: add myNotes
+
 const articleContainerStyles = {
   margin: `20px`,
   maxWidth: `900px`,
@@ -124,7 +129,7 @@ export const Head = ({ location, data, params, pageContext }) => {
   const { article, writer, myNotes } = data?.airtableArticles?.data;
   console.log({ article, writer });
   const socialImage = generateSocialImage({
-    title: article.replace(/[^\w\s]/gi, ''),
+    title: article.replace(/[^\w\s]/gi, ""),
     tagline: "What now",
     cloudName: "tiagofsanchez",
     imagePublicID: "productCorner/og",
