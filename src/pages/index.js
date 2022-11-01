@@ -20,6 +20,7 @@ import Hero from "../components/Hero";
 // DONE: HomePage to only show a couple of listings
 // HomePage: when Airtable changes, it triggers the push of the project
 // DONE: AllArticles Page
+// Align the the page to the middle
 
 const articleContainerStyles = {
   margin: `20px`,

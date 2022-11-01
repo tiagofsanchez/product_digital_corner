@@ -1,19 +1,20 @@
+import * as React from "react";
 import { Box, Divider, Fab, Typography } from "@mui/material";
 import { graphql } from "gatsby";
-import * as React from "react";
 import MuiMarkdown from "mui-markdown";
 import ArticleCardWriters from "../../components/ArticleCardWriters";
 import LinkIcon from "@mui/icons-material/Link";
 import moment from "moment";
 import SEO from "../../components/SEO";
+import generateSocialImage from "../../../functions/generateSocialmage";
 
 // TODOS:
 // DONE: Writer name and article type
 // DONE Link to the original article
 // DONE: Lik UI
-// SEO of this page
-// OG for this page
-// Nice Image on the OG of this page that will
+// ALMOST: SEO of this page
+// ALMOST: OG for this page
+// ALMOST: Nice Image on the OG of this page that will
 // If Video, display Video
 // More Articles on the page to keep the user engaged
 // Comments so that people can comment on the article on POV
@@ -118,6 +119,19 @@ export const query = graphql`
 export default BlogPost;
 
 export const Head = ({ location, data, params, pageContext }) => {
-  console.log(location, data, params, pageContext);
+  // this gives me access to the data from the post
+  console.log({ location, data, params, pageContext });
+  const { article, writer, myNotes } = data?.airtableArticles?.data;
+  console.log({ article, writer });
+  const socialImage = generateSocialImage({
+    title: article.replace(/[^\w\s]/gi, ''),
+    tagline: "What now",
+    cloudName: "tiagofsanchez",
+    imagePublicID: "productCorner/og",
+    titleFont: "futura",
+    taglineFont: "futura",
+    textColor: "232129",
+  });
+  console.log(socialImage);
   return <SEO />;
 };

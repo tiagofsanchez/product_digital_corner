@@ -6,7 +6,6 @@ module.exports = {
   siteMetadata: {
     title: `Product Corner`,
     siteUrl: `https://www.productcorner.io`,
-    image: ``,
     description: `The best articles and sources of information about product management, together with some of my personal notes.`,
   },
   plugins: [
@@ -16,8 +15,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
-      },
+        icon: "src/images/logo.png"
+      }
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
