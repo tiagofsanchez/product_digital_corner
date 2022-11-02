@@ -1,5 +1,8 @@
 import * as React from "react";
-import { Box, Fab, Typography } from "@mui/material";
+
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Fab from "@mui/material/Fab";
 import { graphql } from "gatsby";
 import MuiMarkdown from "mui-markdown";
 import ArticleCardWriters from "../../components/ArticleCardWriters";
@@ -11,7 +14,7 @@ import generateSocialImage from "../../../functions/generateSocialmage";
 // TODOS:
 // DONE: Writer name and article type
 // DONE Link to the original article
-// DONE: Lik UI
+// DONE: Link UI
 // ALMOST: SEO of this page
 // ALMOST: OG for this page
 // ALMOST: Nice Image on the OG of this page that will
@@ -19,7 +22,7 @@ import generateSocialImage from "../../../functions/generateSocialmage";
 // More Articles on the page to keep the user engaged
 // Comments so that people can comment on the article on POV
 
-// OG: add writers
+// DONE OG: add writers
 // OG: use react helmet or not at
 // OG: reconstruct a function where I simplify things
 
@@ -123,11 +126,10 @@ export const query = graphql`
 export default BlogPost;
 
 export const Head = ({ data }) => {
-  const { article, writer, myNotes } = data?.airtableArticles?.data;
-  console.log({ article, writer, all: data?.airtableArticles?.data, myNotes });
+  const { article, writer } = data?.airtableArticles?.data;
   const socialImage = generateSocialImage({
     title: article?.replace(/[^\w\s]/gi, ""),
-    author: myNotes?.replace(/[^\w\s]/gi, ""),
+    author: writer[0].data.name,
     cloudName: "tiagofsanchez",
     imagePublicID: "productCorner/product_corner_og",
     titleFont: "futura",

@@ -14,7 +14,7 @@ export default function generateSocialImage({
   textAreaWidth = 1280,
   textLeftOffset = 70,
   titleTopOffset = 160,
-  authorTopOffset = 300,
+  authorTopOffset = 500,
   textColor = "000000",
   titleFontSize = 90,
   authorFontSize = 20,

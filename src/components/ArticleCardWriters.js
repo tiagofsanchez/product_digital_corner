@@ -17,7 +17,7 @@ const ArticleCardWriters = ({ resourceAccess, resourceType, writerArray }) => {
       {writerArray.map((writer, index) => {
         return (
           <Typography key={index}>
-            {index >= 1 ? "&" : null} {writer.data.name}{" "}
+            {index >= 1 ? "&" : null} {writer.data.name}
           </Typography>
         );
       })}
