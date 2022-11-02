@@ -19,10 +19,10 @@ import generateSocialImage from "../../../functions/generateSocialmage";
 // More Articles on the page to keep the user engaged
 // Comments so that people can comment on the article on POV
 
-// OG: logo to be X
-// OG: Template to be squared instead with border
 // OG: add writers
 // OG: add myNotes
+// OG: use react helmet or not at
+// OG: reconstruct a function where I simplify things
 
 const articleContainerStyles = {
   margin: `20px`,
@@ -123,16 +123,14 @@ export const query = graphql`
 
 export default BlogPost;
 
-export const Head = ({ location, data, params, pageContext }) => {
-  // this gives me access to the data from the post
-  console.log({ location, data, params, pageContext });
+export const Head = ({ data }) => {
   const { article, writer, myNotes } = data?.airtableArticles?.data;
-  console.log({ article, writer });
+  console.log({ article, writer, all: data?.airtableArticles?.data, myNotes });
   const socialImage = generateSocialImage({
     title: article.replace(/[^\w\s]/gi, ""),
-    tagline: "What now",
+    author: myNotes.replace(/[^\w\s]/gi, ""),
     cloudName: "tiagofsanchez",
-    imagePublicID: "productCorner/og",
+    imagePublicID: "productCorner/product_corner_og",
     titleFont: "futura",
     taglineFont: "futura",
     textColor: "232129",

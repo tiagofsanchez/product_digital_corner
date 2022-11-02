@@ -1,23 +1,23 @@
 export default function generateSocialImage({
   title,
-  tagline,
+  author,
   cloudName,
   imagePublicID,
   cloudinaryUrlBase = "https://res.cloudinary.com",
   version = null,
-  titleFont = "arial",
+  titleFont = "Futura",
   titleExtraConfig = "",
-  taglineExtraConfig = "",
-  taglineFont = "arial",
+  authorExtraConfig = "",
+  authorFont = "Futura",
   imageWidth = 1280,
   imageHeight = 669,
   textAreaWidth = 1280,
   textLeftOffset = 70,
   titleTopOffset = 160,
-  taglineTopOffset = 300,
+  authorTopOffset = 300,
   textColor = "000000",
   titleFontSize = 50,
-  taglineFontSize = 20,
+  authorFontSize = 20,
 }: Config): string {
   // configure social media image dimensions, quality, and format
   const imageConfig = [
@@ -42,16 +42,16 @@ export default function generateSocialImage({
     )}`,
   ].join(",");
 
-  // configure the tagline text
-  const taglineConfig = [
+  // configure the authorline text
+  const authorConfig = [
     `w_${textAreaWidth}`,
     "c_fit",
     `co_rgb:${textColor}`,
     "g_north_west",
     `x_${textLeftOffset}`,
-    `y_${taglineTopOffset}`,
-    `l_text:${taglineFont}_${taglineFontSize}${taglineExtraConfig}:${encodeURIComponent(
-      tagline
+    `y_${authorTopOffset}`,
+    `l_text:${authorFont}_${authorFontSize}${authorExtraConfig}:${encodeURIComponent(
+      author
     )}`,
   ].join(",");
 
@@ -63,7 +63,7 @@ export default function generateSocialImage({
     "upload",
     imageConfig,
     titleConfig,
-    taglineConfig,
+    authorConfig,
     version,
     imagePublicID,
   ];
