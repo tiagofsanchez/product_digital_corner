@@ -1,3 +1,4 @@
+import Container from "@mui/material/Container";
 import { ThemeProvider } from "@mui/material/styles";
 import * as React from "react";
 import Styles from "../styles/styles";
@@ -9,9 +10,11 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Styles />
-      <Header />
-      {children}
-      <Footer />
+      <Container>
+        <Header />
+        {children}
+        <Footer />
+      </Container>
     </ThemeProvider>
   );
 };

@@ -22,33 +22,26 @@ import Hero from "../components/Hero";
 // DONE: AllArticles Page
 // Align the the page to the middle
 
-const articleContainerStyles = {
-  margin: `20px`,
-  maxWidth: `900px`,
-};
-
 const HomePage = (props) => {
   const allArticles = props.data.allAirtableArticles.nodes;
   return (
     <>
       <Box sx={{ display: `grid`, gridGap: `20px` }}>
         <Hero />
-        <Box sx={articleContainerStyles}>
-          <ArticlesList allArticles={allArticles} />
-          <Link to="/articles" style={{ textDecoration: "none" }}>
-            <Button
-              variant="text"
-              sx={{
-                color: `#d23669`,
-                fontWeight: 900,
-                fontSize: 16,
-                marginTop: `15px`,
-              }}
-            >
-              📜 More Articles ...
-            </Button>
-          </Link>
-        </Box>
+        <ArticlesList allArticles={allArticles} />
+        <Link to="/articles" style={{ textDecoration: "none" }}>
+          <Button
+            variant="text"
+            sx={{
+              color: `#d23669`,
+              fontWeight: 900,
+              fontSize: 16,
+              marginTop: `15px`,
+            }}
+          >
+            📜 More Articles ...
+          </Button>
+        </Link>
       </Box>
     </>
   );

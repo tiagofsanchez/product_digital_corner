@@ -26,7 +26,7 @@ import generateSocialImage from "../../../functions/generateSocialmage";
 
 const articleContainerStyles = {
   margin: `20px`,
-  maxWidth: `900px`,
+
   display: `grid`,
   gridGap: `25px`,
 };
