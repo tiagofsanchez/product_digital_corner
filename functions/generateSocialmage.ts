@@ -16,7 +16,7 @@ export default function generateSocialImage({
   titleTopOffset = 160,
   authorTopOffset = 300,
   textColor = "000000",
-  titleFontSize = 50,
+  titleFontSize = 90,
   authorFontSize = 20,
 }: Config): string {
   // configure social media image dimensions, quality, and format
@@ -27,7 +27,6 @@ export default function generateSocialImage({
     "q_auto",
     "f_auto",
   ].join(",");
-
 
   // configure the title text
   const titleConfig = [

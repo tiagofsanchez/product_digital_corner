@@ -127,8 +127,8 @@ export const Head = ({ data }) => {
   const { article, writer, myNotes } = data?.airtableArticles?.data;
   console.log({ article, writer, all: data?.airtableArticles?.data, myNotes });
   const socialImage = generateSocialImage({
-    title: article.replace(/[^\w\s]/gi, ""),
-    author: myNotes.replace(/[^\w\s]/gi, ""),
+    title: article?.replace(/[^\w\s]/gi, ""),
+    author: myNotes?.replace(/[^\w\s]/gi, ""),
     cloudName: "tiagofsanchez",
     imagePublicID: "productCorner/product_corner_og",
     titleFont: "futura",
