@@ -8,7 +8,7 @@ const styles = {
     backgroundColor: `#FFDF87`,
   },
   ul: {
-    fontFamily: ["IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif"].join(
+    fontFamily: ["Futura", "Helvetica Neue", "Arial", "sans-serif"].join(
       ","
     ),
     li: {
