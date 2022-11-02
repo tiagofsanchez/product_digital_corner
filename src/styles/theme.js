@@ -18,7 +18,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: ["Futura", "Helvetica Neue", "Arial", "sans-serif"].join(","),
-    fontSize: 13,
+    fontSize: 16,
     body: {
       fontSize: `20rem`,
     },

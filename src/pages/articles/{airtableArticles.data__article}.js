@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Divider, Fab, Typography } from "@mui/material";
+import { Box, Fab, Typography } from "@mui/material";
 import { graphql } from "gatsby";
 import MuiMarkdown from "mui-markdown";
 import ArticleCardWriters from "../../components/ArticleCardWriters";
@@ -20,7 +20,6 @@ import generateSocialImage from "../../../functions/generateSocialmage";
 // Comments so that people can comment on the article on POV
 
 // OG: add writers
-// OG: add myNotes
 // OG: use react helmet or not at
 // OG: reconstruct a function where I simplify things
 
@@ -90,7 +89,7 @@ const BlogPost = ({ data }) => {
           </Fab>
         </Box>
       </Box>
-      <Divider variant="fullWidth" />
+
       {myNotes && (
         <Box sx={myNotesStyles}>
           <MuiMarkdown>{myNotes}</MuiMarkdown>

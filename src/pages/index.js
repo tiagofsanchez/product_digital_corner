@@ -74,7 +74,6 @@ export const query = graphql`
   }
 `;
 
-export const Head = ({ location, data }) => {
-  console.log(location, data);
+export const Head = () => {
   return <SEO />;
 };
