@@ -11,6 +11,8 @@ import SEO from "../../components/SEO";
 import generateSocialImage from "../../../functions/generateSocialmage";
 import { Fab } from "@mui/material";
 
+import { StaticImage } from "gatsby-plugin-image";
+
 // TODOS:
 // DONE: Writer name and article type
 // DONE Link to the original article
@@ -40,10 +42,10 @@ const titleStyles = {
   marginBottom: `15px`,
 };
 
-const myNotesStyles = {
-  borderRadius: `8px`,
+const myArticleStyles = {
   backgroundColor: `#FFF1C9`,
-  padding: `20px`,
+  padding: `30px`,
+  borderRadius: `10px`,
 };
 
 const BlogPost = ({ data }) => {
@@ -57,7 +59,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Box sx={articleContainerStyles}>
-      <Box>
+      <Box sx={myArticleStyles}>
         <Typography
           variant="overline"
           gutterBottom
@@ -82,11 +84,15 @@ const BlogPost = ({ data }) => {
           />
         </Box>
       </Box>
-
-      {myNotes && (
-        <Box sx={myNotesStyles}>
+      {myNotes ? (
+        <Box>
           <MuiMarkdown>{myNotes}</MuiMarkdown>
         </Box>
+      ) : (
+        <Typography>
+          No notes, yet ... but I definitely recommend this article! Just check
+          the link below.
+        </Typography>
       )}
       <Fab size="small" aria-label="Link" href={url} target="_blank">
         <LinkIcon />
@@ -128,6 +134,5 @@ export const Head = ({ data }) => {
     taglineFont: "futura",
     textColor: "232129",
   });
-  console.log(socialImage);
   return <SEO />;
 };
