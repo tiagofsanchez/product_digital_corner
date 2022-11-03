@@ -1,41 +1,51 @@
-import { Box, Divider, Fab, Typography } from "@mui/material";
-import { graphql } from "gatsby";
 import * as React from "react";
+
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import { graphql } from "gatsby";
 import MuiMarkdown from "mui-markdown";
 import ArticleCardWriters from "../../components/ArticleCardWriters";
 import LinkIcon from "@mui/icons-material/Link";
 import moment from "moment";
 import SEO from "../../components/SEO";
+import generateSocialImage from "../../../functions/generateSocialmage";
+import { Fab } from "@mui/material";
+
+import { StaticImage } from "gatsby-plugin-image";
 
 // TODOS:
 // DONE: Writer name and article type
 // DONE Link to the original article
-// DONE: Lik UI
-// SEO of this page
-// OG for this page
-// Nice Image on the OG of this page that will
+// DONE: Link UI
+// ALMOST: SEO of this page
+// ALMOST: OG for this page
+// ALMOST: Nice Image on the OG of this page that will
+// OG for each;
+// OG Global
 // If Video, display Video
 // More Articles on the page to keep the user engaged
 // Comments so that people can comment on the article on POV
 
+// DONE OG: add writers
+// DONE OG: use react helmet or not at, no need
+
+// OG: reconstruct a function where I simplify things
+
 const articleContainerStyles = {
-  margin: `20px`,
-  maxWidth: `900px`,
   display: `grid`,
   gridGap: `25px`,
 };
 
 const titleStyles = {
-  textTransform: `uppercase`,
   fontSize: `50px`,
   fontWeight: 400,
-  marginBottom: `5px`,
+  marginBottom: `15px`,
 };
 
-const myNotesStyles = {
-  borderRadius: `8px`,
+const myArticleStyles = {
   backgroundColor: `#FFF1C9`,
-  padding: `20px`,
+  padding: `30px`,
+  borderRadius: `10px`,
 };
 
 const BlogPost = ({ data }) => {
@@ -49,7 +59,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Box sx={articleContainerStyles}>
-      <Box>
+      <Box sx={myArticleStyles}>
         <Typography
           variant="overline"
           gutterBottom
@@ -63,9 +73,8 @@ const BlogPost = ({ data }) => {
         </Typography>
         <Box
           sx={{
-            display: `flex`,
-            justifyContent: `space-between`,
-            alignItems: `center`,
+            display: `grid`,
+            gridGap: `15px`,
           }}
         >
           <ArticleCardWriters
@@ -73,23 +82,21 @@ const BlogPost = ({ data }) => {
             resourceAccess={resourceAccess}
             resourceType={resourceType}
           />
-          <Fab
-            size="small"
-            aria-label="Link"
-            href={url}
-            target="_blank"
-            color="default"
-          >
-            <LinkIcon />
-          </Fab>
         </Box>
       </Box>
-      <Divider variant="fullWidth" />
-      {myNotes && (
-        <Box sx={myNotesStyles}>
+      {myNotes ? (
+        <Box>
           <MuiMarkdown>{myNotes}</MuiMarkdown>
         </Box>
+      ) : (
+        <Typography>
+          No notes, yet ... but I definitely recommend this article! Just check
+          the link below.
+        </Typography>
       )}
+      <Fab size="small" aria-label="Link" href={url} target="_blank">
+        <LinkIcon />
+      </Fab>
     </Box>
   );
 };
@@ -117,7 +124,15 @@ export const query = graphql`
 
 export default BlogPost;
 
-export const Head = ({ location, data, params, pageContext }) => {
-  console.log(location, data, params, pageContext);
+export const Head = ({ data }) => {
+  const { article, writer } = data?.airtableArticles?.data;
+  const socialImage = generateSocialImage({
+    title: article?.replace(/[^\w\s]/gi, ""),
+    cloudName: "tiagofsanchez",
+    imagePublicID: "productCorner/product_corner_og",
+    titleFont: "futura",
+    taglineFont: "futura",
+    textColor: "232129",
+  });
   return <SEO />;
 };

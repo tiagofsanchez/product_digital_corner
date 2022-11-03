@@ -17,10 +17,8 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif"].join(
-      ","
-    ),
-    fontSize: 13,
+    fontFamily: ["Futura", "Helvetica Neue", "Arial", "sans-serif"].join(","),
+    fontSize: 16,
     body: {
       fontSize: `20rem`,
     },

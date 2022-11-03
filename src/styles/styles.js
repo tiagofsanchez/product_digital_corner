@@ -8,13 +8,13 @@ const styles = {
     backgroundColor: `#FFDF87`,
   },
   ul: {
-    fontFamily: ["IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif"].join(
+    fontFamily: ["Futura", "Helvetica Neue", "Arial", "sans-serif"].join(
       ","
     ),
     li: {
       fontWeight: 400,
       lineHeight: 1.5,
-      fontSize: "0.9285714285714286rem",
+      fontSize: "1.1428571428571428rem",
     },
   },
 };

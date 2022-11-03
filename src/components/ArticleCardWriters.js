@@ -1,22 +1,31 @@
 import { Box, Chip, Typography } from "@mui/material";
 import * as React from "react";
 
-const ArticleCardWriters = ({ resourceAccess, resourceType, writerArray }) => {
+const ArticleCardWriters = ({
+  resourceAccess,
+  resourceType,
+  writerArray,
+  url,
+}) => {
   return (
     <Box
       sx={{
         display: `flex`,
         marginBott: 1,
-        gridGap: `5px`,
+        gridGap: `10px`,
         alignItems: `center`,
       }}
     >
       <Chip label={resourceType} />
       <Chip label={resourceAccess} variant="outlined" />
       <Typography>by</Typography>
-      {writerArray.map((writer, index) => (
-        <Typography key={index}>{writer.data.name}</Typography>
-      ))}
+      {writerArray.map((writer, index) => {
+        return (
+          <Typography key={index}>
+            {index >= 1 ? "&" : null} {writer.data.name}
+          </Typography>
+        );
+      })}
     </Box>
   );
 };

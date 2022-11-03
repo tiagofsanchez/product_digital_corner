@@ -4,18 +4,11 @@ import Box from "@mui/system/Box";
 import ArticlesList from "../../components/ArticlesList";
 import SEO from "../../components/SEO";
 
-const articleContainerStyles = {
-  margin: `20px`,
-  maxWidth: `900px`,
-};
-
 const ArticlesPage = (props) => {
   const allArticles = props.data.allAirtableArticles.nodes;
   return (
     <>
-      <Box sx={articleContainerStyles}>
-        <ArticlesList allArticles={allArticles} />
-      </Box>
+      <ArticlesList allArticles={allArticles} />
     </>
   );
 };

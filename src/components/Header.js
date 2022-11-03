@@ -4,7 +4,8 @@ import { Box } from "@mui/material";
 import { Link } from "gatsby";
 
 const containerStyles = {
-  margin: `20px`,
+  marginBottom: `60px`,
+  marginTop: `40px`,
   display: `flex`,
 };
 
@@ -25,7 +26,7 @@ const Header = () => {
             textTransform: `uppercase`,
           }}
         >
-          My Product Corner
+          Product Corner
         </Typography>
       </Link>
     </Box>

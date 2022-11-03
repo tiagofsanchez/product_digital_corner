@@ -1,4 +1,6 @@
+import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
+import { Link } from "gatsby";
 import * as React from "react";
 import ArticleCard from "./ArticleCard";
 
@@ -14,6 +16,19 @@ const ArticlesList = ({ allArticles }) => {
       {allArticles.map((article, index) => {
         return <ArticleCard key={index} article={article.data} />;
       })}
+      <Link to="/articles" style={{ textDecoration: "none" }}>
+          <Button
+            variant="text"
+            sx={{
+              color: `#d23669`,
+              fontWeight: 900,
+              fontSize: 16,
+       
+            }}
+          >
+            📜 More Articles ...
+          </Button>
+        </Link>
     </Box>
   );
 };

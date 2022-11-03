@@ -20,34 +20,15 @@ import Hero from "../components/Hero";
 // DONE: HomePage to only show a couple of listings
 // HomePage: when Airtable changes, it triggers the push of the project
 // DONE: AllArticles Page
-
-const articleContainerStyles = {
-  margin: `20px`,
-  maxWidth: `900px`,
-};
+// Align the the page to the middle
 
 const HomePage = (props) => {
   const allArticles = props.data.allAirtableArticles.nodes;
   return (
     <>
-      <Box sx={{ display: `grid`, gridGap: `20px` }}>
+      <Box sx={{ display: `grid`, gridGap: `80px` }}>
         <Hero />
-        <Box sx={articleContainerStyles}>
-          <ArticlesList allArticles={allArticles} />
-          <Link to="/articles" style={{ textDecoration: "none" }}>
-            <Button
-              variant="text"
-              sx={{
-                color: `#d23669`,
-                fontWeight: 900,
-                fontSize: 16,
-                marginTop: `15px`,
-              }}
-            >
-              📜 More Articles ...
-            </Button>
-          </Link>
-        </Box>
+        <ArticlesList allArticles={allArticles} />
       </Box>
     </>
   );
@@ -80,7 +61,6 @@ export const query = graphql`
   }
 `;
 
-export const Head = ({ location, data }) => {
-  console.log(location, data);
+export const Head = () => {
   return <SEO />;
 };
