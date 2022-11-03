@@ -1,13 +1,18 @@
 import { Box, Chip, Typography } from "@mui/material";
 import * as React from "react";
 
-const ArticleCardWriters = ({ resourceAccess, resourceType, writerArray }) => {
+const ArticleCardWriters = ({
+  resourceAccess,
+  resourceType,
+  writerArray,
+  url,
+}) => {
   return (
     <Box
       sx={{
         display: `flex`,
         marginBott: 1,
-        gridGap: `5px`,
+        gridGap: `10px`,
         alignItems: `center`,
       }}
     >

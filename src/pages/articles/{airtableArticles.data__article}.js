@@ -2,7 +2,6 @@ import * as React from "react";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Fab from "@mui/material/Fab";
 import { graphql } from "gatsby";
 import MuiMarkdown from "mui-markdown";
 import ArticleCardWriters from "../../components/ArticleCardWriters";
@@ -10,6 +9,7 @@ import LinkIcon from "@mui/icons-material/Link";
 import moment from "moment";
 import SEO from "../../components/SEO";
 import generateSocialImage from "../../../functions/generateSocialmage";
+import { Fab } from "@mui/material";
 
 // TODOS:
 // DONE: Writer name and article type
@@ -35,10 +35,9 @@ const articleContainerStyles = {
 };
 
 const titleStyles = {
-  textTransform: `uppercase`,
   fontSize: `50px`,
   fontWeight: 400,
-  marginBottom: `5px`,
+  marginBottom: `15px`,
 };
 
 const myNotesStyles = {
@@ -72,9 +71,8 @@ const BlogPost = ({ data }) => {
         </Typography>
         <Box
           sx={{
-            display: `flex`,
-            justifyContent: `space-between`,
-            alignItems: `center`,
+            display: `grid`,
+            gridGap: `15px`,
           }}
         >
           <ArticleCardWriters
@@ -82,15 +80,6 @@ const BlogPost = ({ data }) => {
             resourceAccess={resourceAccess}
             resourceType={resourceType}
           />
-          <Fab
-            size="small"
-            aria-label="Link"
-            href={url}
-            target="_blank"
-            color="default"
-          >
-            <LinkIcon />
-          </Fab>
         </Box>
       </Box>
 
@@ -99,6 +88,9 @@ const BlogPost = ({ data }) => {
           <MuiMarkdown>{myNotes}</MuiMarkdown>
         </Box>
       )}
+      <Fab size="small" aria-label="Link" href={url} target="_blank">
+        <LinkIcon />
+      </Fab>
     </Box>
   );
 };
