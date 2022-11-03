@@ -1,24 +1,24 @@
 export default function generateSocialImage({
   title,
-  author,
+  // author,
   cloudName,
   imagePublicID,
   cloudinaryUrlBase = "https://res.cloudinary.com",
   version = null,
   titleFont = "Futura",
   titleExtraConfig = "",
-  authorExtraConfig = "",
-  authorFont = "Futura",
+  // authorExtraConfig = "",
+  // authorFont = "Futura",
   imageWidth = 1280,
   imageHeight = 669,
   textAreaWidth = 1280,
   textLeftOffset = 70,
-  titleTopOffset = 160,
-  authorTopOffset = 500,
+  titleTopOffset = 180,
+  // authorTopOffset = 500,
   textColor = "000000",
   titleFontSize = 90,
-  authorFontSize = 20,
-}: Config): string {
+}: // authorFontSize = 20,
+Config): string {
   // configure social media image dimensions, quality, and format
   const imageConfig = [
     `w_${imageWidth}`,
@@ -42,17 +42,17 @@ export default function generateSocialImage({
   ].join(",");
 
   // configure the authorline text
-  const authorConfig = [
-    `w_${textAreaWidth}`,
-    "c_fit",
-    `co_rgb:${textColor}`,
-    "g_north_west",
-    `x_${textLeftOffset}`,
-    `y_${authorTopOffset}`,
-    `l_text:${authorFont}_${authorFontSize}${authorExtraConfig}:${encodeURIComponent(
-      author
-    )}`,
-  ].join(",");
+  // const authorConfig = [
+  //   `w_${textAreaWidth}`,
+  //   "c_fit",
+  //   `co_rgb:${textColor}`,
+  //   "g_north_west",
+  //   `x_${textLeftOffset}`,
+  //   `y_${authorTopOffset}`,
+  //   `l_text:${authorFont}_${authorFontSize}${authorExtraConfig}:${encodeURIComponent(
+  //     author
+  //   )}`,
+  // ].join(",");
 
   // combine all the pieces required to generate a Cloudinary URL
   const urlParts = [
@@ -62,7 +62,7 @@ export default function generateSocialImage({
     "upload",
     imageConfig,
     titleConfig,
-    authorConfig,
+    // authorConfig,
     version,
     imagePublicID,
   ];

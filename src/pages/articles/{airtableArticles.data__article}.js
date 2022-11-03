@@ -18,12 +18,15 @@ import generateSocialImage from "../../../functions/generateSocialmage";
 // ALMOST: SEO of this page
 // ALMOST: OG for this page
 // ALMOST: Nice Image on the OG of this page that will
+// OG for each;
+// OG Global
 // If Video, display Video
 // More Articles on the page to keep the user engaged
 // Comments so that people can comment on the article on POV
 
 // DONE OG: add writers
-// OG: use react helmet or not at
+// DONE OG: use react helmet or not at, no need
+
 // OG: reconstruct a function where I simplify things
 
 const articleContainerStyles = {
@@ -127,7 +130,6 @@ export const Head = ({ data }) => {
   const { article, writer } = data?.airtableArticles?.data;
   const socialImage = generateSocialImage({
     title: article?.replace(/[^\w\s]/gi, ""),
-    author: writer[0].data.name,
     cloudName: "tiagofsanchez",
     imagePublicID: "productCorner/product_corner_og",
     titleFont: "futura",
