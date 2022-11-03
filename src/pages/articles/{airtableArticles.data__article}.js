@@ -27,8 +27,6 @@ import generateSocialImage from "../../../functions/generateSocialmage";
 // OG: reconstruct a function where I simplify things
 
 const articleContainerStyles = {
-  margin: `20px`,
-
   display: `grid`,
   gridGap: `25px`,
 };

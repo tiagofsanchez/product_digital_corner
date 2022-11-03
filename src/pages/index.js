@@ -26,22 +26,9 @@ const HomePage = (props) => {
   const allArticles = props.data.allAirtableArticles.nodes;
   return (
     <>
-      <Box sx={{ display: `grid`, gridGap: `20px` }}>
+      <Box sx={{ display: `grid`, gridGap: `80px` }}>
         <Hero />
         <ArticlesList allArticles={allArticles} />
-        <Link to="/articles" style={{ textDecoration: "none" }}>
-          <Button
-            variant="text"
-            sx={{
-              color: `#d23669`,
-              fontWeight: 900,
-              fontSize: 16,
-              marginTop: `15px`,
-            }}
-          >
-            📜 More Articles ...
-          </Button>
-        </Link>
       </Box>
     </>
   );

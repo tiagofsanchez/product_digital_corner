@@ -1,14 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import * as React from "react";
 
-const heroContainerStyles = {
-  margin: `20px`,
-  maxWidth: `900px`,
-};
 
 const Hero = () => {
   return (
-    <Box sx={heroContainerStyles}>
+    <Box >
       <Typography variant="h3" component="h1" gutterBottom>
         A collection of articles about Product Management
       </Typography>
