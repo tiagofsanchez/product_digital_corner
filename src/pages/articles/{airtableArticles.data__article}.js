@@ -1,17 +1,13 @@
 import * as React from "react";
-
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { graphql } from "gatsby";
 import MuiMarkdown from "mui-markdown";
 import ArticleCardWriters from "../../components/ArticleCardWriters";
-import LinkIcon from "@mui/icons-material/Link";
 import moment from "moment";
 import SEO from "../../components/SEO";
 import generateSocialImage from "../../../functions/generateSocialmage";
-import { Fab } from "@mui/material";
-
-import { StaticImage } from "gatsby-plugin-image";
+import LinkFloatingButton from "../../components/LinkFloatingButton";
 
 // TODOS:
 // DONE: Writer name and article type
@@ -31,10 +27,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 // OG: reconstruct a function where I simplify things
 
-const articleContainerStyles = {
-  display: `grid`,
-  gridGap: `25px`,
-};
+
 
 const titleStyles = {
   fontSize: `50px`,
@@ -44,7 +37,7 @@ const titleStyles = {
 
 const myArticleStyles = {
   backgroundColor: `#FFF1C9`,
-  padding: `30px`,
+  padding: `30px 30px 60px 30px`,
   borderRadius: `10px`,
 };
 
@@ -62,7 +55,7 @@ const BlogPost = ({ data }) => {
   const date = data.airtableArticles.data.createdAt;
 
   return (
-    <Box sx={articleContainerStyles}>
+    <>
       <Box sx={myArticleStyles}>
         <Typography
           variant="overline"
@@ -86,8 +79,10 @@ const BlogPost = ({ data }) => {
             resourceAccess={resourceAccess}
             resourceType={resourceType}
           />
+          
         </Box>
       </Box>
+      <LinkFloatingButton url={url} />
       {myNotes ? (
         <Box sx={myNotesStyle}>
           <MuiMarkdown>{myNotes}</MuiMarkdown>
@@ -98,10 +93,8 @@ const BlogPost = ({ data }) => {
           the link below.
         </Typography>
       )}
-      <Fab size="small" aria-label="Link" href={url} target="_blank">
-        <LinkIcon />
-      </Fab>
-    </Box>
+      
+    </>
   );
 };
 
