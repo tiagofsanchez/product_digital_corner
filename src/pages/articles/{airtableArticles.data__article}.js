@@ -48,6 +48,10 @@ const myArticleStyles = {
   borderRadius: `10px`,
 };
 
+const myNotesStyle = {
+  maxWidth: `900px`,
+};
+
 const BlogPost = ({ data }) => {
   const title = data.airtableArticles.data.article;
   const myNotes = data.airtableArticles.data.myNotes;
@@ -85,11 +89,11 @@ const BlogPost = ({ data }) => {
         </Box>
       </Box>
       {myNotes ? (
-        <Box>
+        <Box sx={myNotesStyle}>
           <MuiMarkdown>{myNotes}</MuiMarkdown>
         </Box>
       ) : (
-        <Typography>
+        <Typography sx={myNotesStyle}>
           No notes, yet ... but I definitely recommend this article! Just check
           the link below.
         </Typography>
