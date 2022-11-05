@@ -27,8 +27,6 @@ import LinkFloatingButton from "../../components/LinkFloatingButton";
 
 // OG: reconstruct a function where I simplify things
 
-
-
 const titleStyles = {
   fontSize: `50px`,
   fontWeight: 400,
@@ -79,7 +77,6 @@ const BlogPost = ({ data }) => {
             resourceAccess={resourceAccess}
             resourceType={resourceType}
           />
-          
         </Box>
       </Box>
       <LinkFloatingButton url={url} />
@@ -89,11 +86,10 @@ const BlogPost = ({ data }) => {
         </Box>
       ) : (
         <Typography sx={myNotesStyle}>
-          No notes, yet ... but I definitely recommend this article! Just check
-          the link below.
+          No notes, yet ... but I definitely recommend this article! Just click
+          the article link.
         </Typography>
       )}
-      
     </>
   );
 };
