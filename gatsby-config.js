@@ -7,7 +7,7 @@ module.exports = {
     title: `Product Corner`,
     siteUrl: `https://www.productcorner.gatsbyjs.io`,
     description: `The best articles and sources of information about product management, together with some of my personal notes.`,
-    siteImage: "src/images/productCornerImage.png",
+    siteImage: "/productCornerImage.png",
   },
   plugins: [
     "gatsby-plugin-image",
@@ -16,8 +16,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/logo.png"
-      }
+        icon: "src/images/logo.png",
+      },
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
