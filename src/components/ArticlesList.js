@@ -10,25 +10,26 @@ const articlesListContainer = {
   flexDirection: `column`,
 };
 
-const ArticlesList = ({ allArticles }) => {
+const ArticlesList = ({ allArticles, isMore }) => {
   return (
     <Box sx={articlesListContainer}>
       {allArticles.map((article, index) => {
         return <ArticleCard key={index} article={article.data} />;
       })}
-      <Link to="/articles" style={{ textDecoration: "none" }}>
+      {isMore && (
+        <Link to="/articles" style={{ textDecoration: "none" }}>
           <Button
             variant="text"
             sx={{
               color: `#d23669`,
               fontWeight: 900,
               fontSize: 16,
-       
             }}
           >
             📜 More Articles ...
           </Button>
         </Link>
+      )}
     </Box>
   );
 };

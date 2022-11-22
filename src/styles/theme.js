@@ -22,10 +22,6 @@ const theme = createTheme({
     body: {
       fontSize: `20rem`,
     },
-    a: { 
-      textDecoration: `none`,
-      color: `pink`
-    },
     h2: {
       fontSize: `45px`,
     },

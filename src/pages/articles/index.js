@@ -8,7 +8,7 @@ const ArticlesPage = (props) => {
   const allArticles = props.data.allAirtableArticles.nodes;
   return (
     <>
-      <ArticlesList allArticles={allArticles} />
+      <ArticlesList allArticles={allArticles} isMore={false} />
     </>
   );
 };

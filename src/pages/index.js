@@ -28,7 +28,7 @@ const HomePage = (props) => {
     <>
       <Box sx={{ display: `grid`, gridGap: `80px` }}>
         <Hero />
-        <ArticlesList allArticles={allArticles} />
+        <ArticlesList allArticles={allArticles} isMore={true} />
       </Box>
     </>
   );
