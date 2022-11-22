@@ -37,7 +37,6 @@ export const query = graphql`
 
 export default ArticlesPage;
 
-export const Head = ({ location, data, params, pageContext }) => {
-  console.log(location, data, params, pageContext);
+export const Head = () => {
   return <SEO />;
 };

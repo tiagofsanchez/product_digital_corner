@@ -5,8 +5,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Product Corner`,
-    siteUrl: `https://www.productcorner.io`,
+    siteUrl: `https://www.productcorner.gatsbyjs.io`,
     description: `The best articles and sources of information about product management, together with some of my personal notes.`,
+    siteImage: "src/images/productCornerImage.png",
   },
   plugins: [
     "gatsby-plugin-image",

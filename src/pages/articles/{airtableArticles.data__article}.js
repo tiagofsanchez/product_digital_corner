@@ -22,9 +22,6 @@ import LinkFloatingButton from "../../components/LinkFloatingButton";
 // More Articles on the page to keep the user engaged
 // Comments so that people can comment on the article on POV
 
-// DONE OG: add writers
-// DONE OG: use react helmet or not at, no need
-
 // OG: reconstruct a function where I simplify things
 
 const titleStyles = {
@@ -118,7 +115,7 @@ export const query = graphql`
 export default BlogPost;
 
 export const Head = ({ data }) => {
-  const { article, writer } = data?.airtableArticles?.data;
+  const { article } = data?.airtableArticles?.data;
   const socialImage = generateSocialImage({
     title: article?.replace(/[^\w\s]/gi, ""),
     cloudName: "tiagofsanchez",
@@ -127,5 +124,6 @@ export const Head = ({ data }) => {
     taglineFont: "futura",
     textColor: "232129",
   });
-  return <SEO />;
+
+  return <SEO image={socialImage} />;
 };
