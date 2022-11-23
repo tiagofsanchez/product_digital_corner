@@ -13,10 +13,12 @@ const SEO = ({ title, description, pathname, children, image }) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: image || `${siteUrl}${siteImage}`,
+    image: image || `https://productcorner.gatsbyjs.io${siteImage}`,
     url: `${siteUrl}${pathname}`,
     twitterUsername,
   };
+
+  console.log(seo.image);
 
   return (
     <>
