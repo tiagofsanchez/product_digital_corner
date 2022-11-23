@@ -17,9 +17,6 @@ const SEO = ({ title, description, pathname, children, image }) => {
     url: `${siteUrl}${pathname}`,
     twitterUsername,
   };
-
-  console.log(seo.image);
-
   return (
     <>
       <title>{seo.title}</title>

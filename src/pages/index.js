@@ -3,24 +3,11 @@ import { graphql } from "gatsby";
 import ArticlesList from "../components/ArticlesList";
 import Box from "@mui/material/Box";
 import SEO from "../components/SEO";
-import Button from "@mui/material/Button";
-import { Link } from "gatsby";
 import Hero from "../components/Hero";
 
-// TODO's:
-// DONE: Layout for HomePage that will serve the other pages
-// DONE: Material Ui: to get the components that I want there
-// UI: Hero
-// DONE UI: ArticleCard
-// DONE: UI: ArticleList
-// DONE: UI: Footer
-
 // MORE TODO's
-// DONE: Query the info that I will want to have in the ArticleCard
-// DONE: HomePage to only show a couple of listings
 // HomePage: when Airtable changes, it triggers the push of the project
 // DONE: AllArticles Page
-// Align the the page to the middle
 
 const HomePage = (props) => {
   const allArticles = props.data.allAirtableArticles.nodes;

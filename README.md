@@ -9,10 +9,13 @@ I have been aggregating such information for a long period and have been keeping
 ## TO DO's
 The things that I need to work from a web app perspective
 
+
+**CSS**
+- [ ] Mobile responsiveness
+
 **Article Page**
 - [ ] Other articles to check
 - [ ] Comments (for users to comment)
-
 
 **All Articles Page**
 - [ ] Searchability of the articles
