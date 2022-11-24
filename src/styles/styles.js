@@ -12,7 +12,10 @@ const styles = {
     li: {
       fontWeight: 400,
       lineHeight: 1.5,
-      fontSize: "1.1428571428571428rem",
+      fontSize: `1.1429rem`,
+      "@media (max-width:900px)": {
+        fontSize: `1.1429rem`,
+      },
     },
   },
 };
