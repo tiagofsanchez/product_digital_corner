@@ -8,21 +8,7 @@ import moment from "moment";
 import SEO from "../../components/SEO";
 import generateSocialImage from "../../../functions/generateSocialmage";
 import LinkFloatingButton from "../../components/LinkFloatingButton";
-
-// TODOS:
-// DONE: Writer name and article type
-// DONE Link to the original article
-// DONE: Link UI
-// ALMOST: SEO of this page
-// ALMOST: OG for this page
-// ALMOST: Nice Image on the OG of this page that will
-// OG for each;
-// OG Global
-// If Video, display Video
-// More Articles on the page to keep the user engaged
-// Comments so that people can comment on the article on POV
-
-// OG: reconstruct a function where I simplify things
+import ArticleCardResource from "../../components/ArticleCardResource";
 
 const titleStyles = {
   fontSize: `50px`,
@@ -63,18 +49,12 @@ const BlogPost = ({ data }) => {
         <Typography variant="h1" sx={titleStyles}>
           {title}
         </Typography>
-        <Box
-          sx={{
-            display: `grid`,
-            gridGap: `15px`,
-          }}
-        >
-          <ArticleCardWriters
-            writerArray={writerArray}
-            resourceAccess={resourceAccess}
-            resourceType={resourceType}
-          />
-        </Box>
+
+        <ArticleCardResource
+          resourceAccess={resourceAccess}
+          resourceType={resourceType}
+        />
+        <ArticleCardWriters writerArray={writerArray} />
       </Box>
       <LinkFloatingButton url={url} />
       {myNotes ? (

@@ -4,11 +4,7 @@ import slugify from "@sindresorhus/slugify";
 import * as React from "react";
 import moment from "moment";
 import ArticleCardWriters from "./ArticleCardWriters";
-
-// TODO:
-// Link to Article Page
-// FormatLink
-// deconstruct the
+import ArticleCardResource from "./ArticleCardResource";
 
 const ArticleCard = ({ article }) => {
   const title = article.article;
@@ -39,11 +35,11 @@ const ArticleCard = ({ article }) => {
             <Typography variant="h5" component="div" gutterBottom>
               {title}
             </Typography>
-            <ArticleCardWriters
-              writerArray={writerArray}
+            <ArticleCardResource
               resourceAccess={resourceAccess}
               resourceType={resourceType}
             />
+            <ArticleCardWriters writerArray={writerArray} />
           </CardContent>
         </CardActionArea>
       </Card>
