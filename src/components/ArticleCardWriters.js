@@ -1,4 +1,4 @@
-import { Box, Chip, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import * as React from "react";
 
 const ArticleCardWriters = ({ writerArray }) => {

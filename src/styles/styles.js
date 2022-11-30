@@ -18,6 +18,17 @@ const styles = {
       },
     },
   },
+  ol: {
+    fontFamily: ["Futura", "Helvetica Neue", "Arial", "sans-serif"].join(","),
+    li: {
+      fontWeight: 400,
+      lineHeight: 1.5,
+      fontSize: `1.1429rem`,
+      "@media (max-width:900px)": {
+        fontSize: `1.1429rem`,
+      },
+    },
+  },
 };
 
 const Styles = () => {

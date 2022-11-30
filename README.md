@@ -11,7 +11,10 @@ The things that I need to work from a web app perspective
 
 
 **CSS**
-- [ ] Mobile responsiveness
+- [x] Mobile responsiveness
+
+**Home Page**
+- [ ] Add the Tech that I build this with
 
 **Article Page**
 - [ ] Other articles to check
